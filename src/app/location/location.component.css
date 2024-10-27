@@ -1,0 +1,98 @@
+/* Contenedor principal */
+.all {
+    margin-top: 60px;
+  }
+  
+  .location-container {
+    margin: 30px auto;
+    max-width: 1200px; /* Limita el ancho máximo del contenedor */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .bold-title {
+    color: #f1ad26;
+    font-size: 24px;
+  }
+  
+  /* Estilo para el título principal */
+  h2 {
+    font-size: 40px;
+    color: #333; /* Color negro oscuro para el título */
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: #f1ad26;
+  }
+  
+  /* Contenedor para el mapa y la información */
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre el mapa y la información */
+  }
+  
+  /* Estilo para el contenedor del mapa */
+  .map-container {
+    flex: 2;
+    max-width: 60%; /* Limita el ancho máximo del mapa */
+    height: 300px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    border-radius: 12px; /* Bordes redondeados para el mapa */
+    overflow: hidden; /* Asegura que el contenido del iframe no sobresalga */
+  }
+  
+  /* Estilo para el contenedor de información */
+  .info-container {
+    flex: 1;
+    max-width: 35%; /* Limita el ancho máximo del contenedor de información */
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+  
+  /* Estilo para la información de contacto */
+  .contact-info {
+    background-color: #ffffff; /* Fondo blanco para el contenedor de información */
+    border-radius: 12px; /* Bordes redondeados para el contenedor de información */
+    padding: 20px;
+    color: #333; /* Color negro para el texto */
+    text-align: center; /* Centramos el texto horizontalmente */
+    height: 265px;
+    font-size: 18px;
+    display: flex; /* Usamos flexbox */
+    flex-direction: column; /* Alineamos los elementos en columna */
+    justify-content: center; /* Centramos verticalmente */
+    align-items: center; /* Centramos horizontalmente */
+  }
+  
+  
+  /* Responsividad para dispositivos móviles */
+  @media (max-width: 768px) {
+    
+    .all{
+      margin-bottom: -60px;
+    }
+    .content {
+      flex-direction: column;
+    }
+  
+    .map-container,
+    .info-container {
+      max-width: 100%;
+      
+    }
+  
+    .bold-title {
+      color: #f1ad26;
+      font-size: 18px;
+    }
+    
+    p {
+     font-size: 16px;
+    }
+  
+  }
+  

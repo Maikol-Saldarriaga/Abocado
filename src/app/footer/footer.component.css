@@ -1,0 +1,173 @@
+/* Estilos Base para el Footer */
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 20px; /* Aumenta el espacio entre los íconos */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a img {
+    width: 45px; /* Tamaño por defecto en pantallas grandes */
+    height: 45px;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.2);
+    color: #fb2466; /* Cambiar a un color llamativo en hover */
+}
+
+.footer .contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.footer .contact-info .col {
+    flex: 1;
+    padding: 10px;
+    min-width: 150px; /* Asegura un buen comportamiento responsive */
+}
+
+.footer .footer-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer .footer-links a {
+    color: white;
+    margin: 0 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-links a:hover {
+    color: #fb2466;
+}
+
+.footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+}
+
+.footer .copyright p {
+    margin: 0;
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.911);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .pdf-container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+
+
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer .social-icons {
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+
+    .footer .social-icons a {
+        margin: 0 10px; /* Espacio más reducido en móviles */
+    }
+
+    .footer .social-icons a img {
+        width: 28px; /* Tamaño del ícono en pantallas pequeñas */
+        height: 28px;
+    }
+
+    .footer .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .contact-info .col {
+        font-size: 0.875rem; /* Tamaño de fuente más pequeño para texto de contacto */
+    }
+
+    .footer .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer-links a {
+        margin-bottom: 10px;
+        font-size: 0.875rem; /* Tamaño de fuente más pequeño para enlaces */
+    }
+
+    .footer .copyright {
+        font-size: 0.75rem; /* Tamaño de fuente más pequeño para el copyright */
+    }
+}

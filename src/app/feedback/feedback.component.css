@@ -1,0 +1,107 @@
+.all {
+    background-color: #fb2466;
+    margin: 0;
+  }
+  
+  .main {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  .feedback-container {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feedback-container h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .feedback-container p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  /* Contenedor de tarjetas */
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Tarjeta individual */
+  .employee-card {
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .employee-card img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .employee-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Estrellas de calificación */
+  .stars {
+    color: #ffc107;
+  }
+  
+  .star {
+    font-size: 1.5em;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star.filled {
+    color: #ffc107;
+  }
+  
+  .star:hover,
+  .star:hover ~ .star {
+    color: #ffca28;
+  }
+  
+  /* Diseño adaptable para pantallas grandes */
+  @media (min-width: 769px) {
+    .cards-container {
+      flex-direction: row;
+    }
+  
+    .employee-card {
+      flex: 1 1 calc(25% - 20px); /* Ajusta el ancho para mostrar 4 tarjetas horizontalmente */
+    }
+  }
+  
+  /* Diseño adaptable para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .employee-card {
+      width: 80%;
+      margin: 10px auto;
+    }
+  
+    .feedback-container {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  

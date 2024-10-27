@@ -1,0 +1,64 @@
+<nav class="navbar" [ngClass]="{'scrolled': isScrolled}">
+    <div class="container-fluid">
+      <!-- Logotipo -->
+      <a class="navbar-brand" href="#">
+       <h1 class="title-abocado"> ABOCADOS</h1>
+      </a>
+  
+      <!-- Menú para pantallas grandes -->
+      <div class="navbar-menu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/inicio" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/nosotros">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('hamburguesas')">Menú</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('section-contacto')" >Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/feedback" >Feedback</a>
+          </li>
+        </ul>
+      </div>
+    
+      <!-- Botón de hamburguesa para móviles -->
+      <button class="navbar-toggler" type="button" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Menú desplegable para móviles -->
+      <div class="offcanvas-menu" [ngClass]="{'open': isMenuOpen}">
+        <!-- Botón para cerrar el menú -->
+        <button class="close-menu" (click)="toggleMenu()" aria-label="Close navigation">
+          &times;
+        </button>
+        <ul class="navbar-nav">
+          <h1 class="title-menu">Menú</h1>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/inicio" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/nosotros">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('hamburguesas')">Menú</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('section-contacto')" >Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/feedback" >Feedback</a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Overlay oscuro -->
+      <div class="overlay" [ngClass]="{'show': isMenuOpen}" (click)="toggleMenu()"></div>
+    </div>
+  </nav>
+  

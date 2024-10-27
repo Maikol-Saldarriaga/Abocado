@@ -1,0 +1,80 @@
+<!-- Botones de navegación -->
+<div class="menu-buttons">
+  <button (click)="scrollToSection('hamburguesas')" class="menu-button">
+    <img src="assets/img/icons/burguer.png" alt="Hamburguesa" class="button-icon" /> Hamburguesa
+  </button>
+  <button (click)="scrollToSection('papas')" class="menu-button">
+    <img src="assets/img/icons/papas-fritas.png" alt="Papas" class="button-icon" /> Papas
+  </button>
+  <button (click)="scrollToSection('perros')" class="menu-button">
+    <img src="assets/img/icons/hot-dog.png" alt="Perros" class="button-icon" /> Perros
+  </button>
+  <button (click)="scrollToSection('bebidas')" class="menu-button">
+    <img src="assets/img/icons/bebidas-sin-alcohol.png" alt="Bebidas" class="button-icon" /> Bebidas
+  </button>
+</div>
+
+<!-- Sección de Hamburguesas -->
+<div id="hamburguesas" class="contenedor-title">
+  <h2 class="Title1">Hamburguesas</h2>
+</div>
+<div class="menu-container">
+  <div *ngFor="let plato of menuHamburguesas" class="plato">
+    <img [src]="plato.imagenUrl" alt="{{ plato.nombre }}" class="plato-imagen" />
+    <div class="plato-info">
+      <h2>{{ plato.nombre }}</h2>
+      <p>{{ plato.descripcion }}</p>
+      <p><strong>Precio: ${{ plato.precio }}</strong></p>
+      <button (click)="openPlatoDetalle(plato, 'hamburguesas')">Comprar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sección de Papas -->
+<div id="papas" class="contenedor-title">
+  <h2 class="Title1">Papas</h2>
+</div>
+<div class="menu-container">
+  <div *ngFor="let plato of menuPapas" class="plato">
+    <img [src]="plato.imagenUrl" alt="{{ plato.nombre }}" class="plato-imagen" />
+    <div class="plato-info">
+      <h2>{{ plato.nombre }}</h2>
+      <p>{{ plato.descripcion }}</p>
+      <p><strong>Precio: ${{ plato.precio }}</strong></p>
+      <button (click)="openPlatoDetalle(plato, 'papas')">Comprar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sección de Perros -->
+ 
+<div id="perros" class="contenedor-title">
+  <h2 class="Title1">Perros</h2>
+</div>
+<div class="menu-container">
+  <div *ngFor="let plato of menuPerros" class="plato">
+    <img [src]="plato.imagenUrl" alt="{{ plato.nombre }}" class="plato-imagen" />
+    <div class="plato-info">
+      <h2>{{ plato.nombre }}</h2>
+      <p>{{ plato.descripcion }}</p>
+      <p><strong>Precio: ${{ plato.precio }}</strong></p>
+      <button (click)="openPlatoDetalle(plato, 'perros')">Comprar</button>
+    </div>
+  </div>
+</div> 
+
+<!-- Sección de Bebidas -->
+<div id="bebidas" class="contenedor-title">
+  <h2 class="Title1">Bebidas</h2>
+</div>
+<div class="menu-container">
+  <div *ngFor="let plato of menuBebidas" class="plato">
+    <img [src]="plato.imagenUrl" alt="{{ plato.nombre }}" class="plato-imagen" />
+    <div class="plato-info">
+      <h2>{{ plato.nombre }}</h2>
+      <p>{{ plato.descripcion }}</p>
+      <p><strong>Precio: ${{ plato.precio }}</strong></p>
+      <button (click)="openPlatoDetalle(plato, 'bebidas')">Comprar</button>
+    </div>
+  </div>
+</div>

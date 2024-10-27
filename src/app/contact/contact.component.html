@@ -1,0 +1,74 @@
+<div id="section-contacto" class="main">
+    <section class="contact" id="contact">
+      <div class="title1">
+        <h1 class="text-center">Contáctanos</h1>
+      </div>
+      <div class="title2">
+        <h5 class="text-center2">
+          En Abocados lo más importante son nuestros clientes por eso escribenos y comenta tus experiencias
+        </h5>
+      </div>
+      <div class="form-container">
+        <!-- Columna izquierda: Formulario -->
+        <div class="left-column">
+          <div class="mb-3">
+            <div class="container text-center">
+              <div class="row form-row">
+                <div class="col-12 col-md-6">
+                  <input
+                    type="text"
+                    class="form-control first"
+                    id="nameInput"
+                    placeholder="Nombre"
+                    [(ngModel)]="name"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <input
+                    type="email"
+                    class="form-control first"
+                    id="emailInput"
+                    placeholder="Email"
+                    [(ngModel)]="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <textarea
+                    class="form-control second"
+                    id="messageTextarea"
+                    placeholder="Mensaje"
+                    [(ngModel)]="message"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button type="button" class="btn" (click)="sendEmail()">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Columna derecha: Información adicional -->
+        <div class="right-column">
+          <div class="info-box">
+            <h3>Preguntas</h3>
+            <p>¿Tienes alguna pregunta? Completa este formulario y nos aseguraremos de brindarte una respuesta clara y rápida.</p>
+            <h3>Interrupciones</h3>
+            <p>Si experimentaste alguna interrupción en la información, por favor, indícalo en el formulario. Estamos aquí para resolver cualquier inconveniente.</p>
+            <h3>Más Información</h3>
+            <p>¿Necesitas más información? Rellena el formulario y te proporcionaremos todos los detalles que necesitas lo antes posible.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  

@@ -1,0 +1,199 @@
+/* Estilos Base */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita cualquier desbordamiento horizontal */
+}
+.main {
+  width: 100%;
+  background-color: #f1ad26;
+  padding: 4% 14%;
+  box-sizing: border-box;
+}
+
+h1,
+h5 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.3rem;
+  color: #353535;
+}
+
+h5 {
+  font-size: 2.1rem;
+  color: #353535;
+  font-weight: 400;
+}
+
+.mb-3 {
+  margin-top: 20px;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(248, 248, 248, 0.226); /* Ajusta el valor de la sombra */
+}
+
+.form-control:focus {
+  border-color: #fb2466;
+  outline: none;
+  box-shadow: 0 0 5px #fb2466;
+}
+
+.first {
+  height: 70px;
+}
+
+.second {
+  resize: none;
+  font-family: "Monserrat", sans-serif;
+  height: 40vh;
+  box-shadow: 0 4px 8px rgba(248, 248, 248, 0.226); /* Ajusta el valor de la sombra */
+}
+
+.title2 {
+  margin-top: -50px;
+}
+
+.btn {
+  border-radius: 15px;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  background-color: #fb2466; /* Fondo transparente para mostrar el borde */
+  color: #fcfcfc; /* Color del texto */
+  border: 2px solid #fb2466; /* Borde blanco alrededor del botón */
+  font-weight: 600;
+  margin-top: 0.5rem; /* Espacio arriba del botón */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fafafa;
+  color: #fb2466;
+}
+
+/* Layout para pantallas grandes (desktop) */
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Alinea ambas columnas a la misma altura */
+}
+
+.left-column {
+  flex: 1;
+  padding-right: 40px;
+   height: 100%
+}
+
+.right-column {
+  flex: 1;
+  padding-left: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  color: #353535;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h3 {
+  font-size: 1.5rem;
+  color: #fb2466;
+  margin-top: 20px;
+}
+
+.info-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    padding: 20;
+  }
+
+
+  .right-column {
+    padding-top: 20;
+  }
+.row{
+    padding-bottom: 15px;
+}
+  .btn {
+    width: 60%;
+    padding-bottom: 10px;
+}
+  .left-column {
+    flex: 1;
+     height: 100%
+  }
+  
+  .left-column {
+    flex: 1;
+    padding-right: 5px;
+     height: 100%
+  }
+
+}
+
+@media (min-width: 769px) {
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+  }
+
+  .col-12.col-md-6 {
+    flex: 1;
+  }
+
+  .form-control.first {
+    margin-bottom: 1.5rem;
+  }
+
+  .second {
+    width: 100%;
+   
+  }
+
+  .text-center2 {
+    font-size: 24px;
+  }
+
+ 
+ 
+}

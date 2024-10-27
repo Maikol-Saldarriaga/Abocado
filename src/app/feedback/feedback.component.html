@@ -1,0 +1,32 @@
+<div class="all">
+    <app-menu></app-menu>
+  
+    <div class="main">
+      <div class="feedback-container">
+        <h2>Calificación de los Empleados</h2>
+        <p>Esta es una sección para calificar a los empleados.</p>
+  
+        <!-- Contenedor para las tarjetas de empleados -->
+        <div class="cards-container">
+          <div class="employee-card" *ngFor="let employee of employees">
+            <img [src]="employee.imageUrl" alt="Imagen de {{ employee.name }}" />
+            <h3>{{ employee.name }}</h3>
+            <div class="stars">
+              <span *ngFor="let star of [].constructor(5); let i = index">
+                <i
+                  class="star"
+                  [class.filled]="i < employee.rating"
+                  (click)="updateRating(employee, i + 1)"
+                  >★</i
+                >
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <app-contact></app-contact>
+    <app-footer></app-footer>
+  </div>
+  

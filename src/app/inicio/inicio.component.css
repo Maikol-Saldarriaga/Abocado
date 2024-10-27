@@ -1,0 +1,25 @@
+
+/* Estilos para la sección de fondo */
+.background-section {
+    background-color: #050505;
+    background-size: cover;
+    background-position: center center;
+    height: 700px; /* Ajusta para que el fondo comience debajo del menú */
+    position: relative; /* Asegura que el z-index funcione si es necesario */
+    z-index: 1; /* Menor que el del menú */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .background-section {
+      background-color: #131313;
+      background-size: cover;
+      background-position: center center;
+      height: 700px; /* Asegura que siempre ocupe al menos la altura completa de la ventana */
+      position: relative;
+      z-index: 1;
+  }
+  
+
+
+  }

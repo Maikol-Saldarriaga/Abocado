@@ -1,0 +1,23 @@
+<!-- src/app/plato-detalle/plato-detalle.component.html -->
+<div class="modal">
+  
+  <img [src]="data.plato.imagenUrl" alt="{{ data.plato.nombre }}" class="plato-imagen" />
+  <h2 class="plato-nombre">{{ data.plato.nombre }}</h2>
+  <div class="plato-info">
+    <p class="descripcion">{{ data.plato.descripcion }}</p>
+    <p class="precio-base"><strong>Precio base: ${{ data.plato.precio }}</strong></p>
+  </div>
+
+  <h3 class="adiciones-titulo">Adiciones:</h3>
+  <div class="adiciones-container">
+    <div *ngFor="let adicion of adiciones" class="adicion-item">
+      <label>
+        <input type="checkbox" (change)="onAdicionChange(adicion, $event)" />
+        {{ adicion.nombre }} (+${{ adicion.precio }})
+      </label>
+    </div>
+  </div>
+
+  <p class="total"><strong>Total: ${{ total }}</strong></p>
+  <button class="btn-agregar" (click)="agregarAlCarrito()">Agregar al carrito</button>
+</div>

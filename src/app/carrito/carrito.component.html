@@ -1,0 +1,122 @@
+<div class="text-main">
+  <h2>
+    Carrito de Compras
+    <a routerLink="/inicio" class="close-link">
+      <i class="fa fa-times"></i> <!-- Ícono de "X" de Font Awesome -->
+    </a>
+  </h2>
+
+  <div *ngIf="items.length > 0; else emptyCart">
+    <div *ngFor="let item of items; let i = index" class="carrito-item">
+      <div class="carrito-detalle">
+        <div class="carrito-texto">
+          <h3 class="carrito-nombre">{{ item.plato.nombre }}</h3>
+          <p class="carrito-precio-unitario">
+            Precio unitario: <span>{{ item.plato.precio | currency }}</span>
+          </p>
+
+          <div class="carrito-adiciones">
+            <p>Adiciones:</p>
+            <ul>
+              <li *ngFor="let adicion of item.adiciones">
+                {{ adicion.nombre }} (+{{ adicion.precio | currency }})
+              </li>
+            </ul>
+          </div>
+
+          <div class="cantidad-control">
+            <button (click)="decrementarCantidad(i)">-</button>
+            <span>{{ item.cantidad }}</span>
+            <button (click)="incrementarCantidad(i)">+</button>
+          </div>
+
+          <p class="carrito-total-item">
+            Total: <strong>{{ calcularItemTotal(item) | currency }}</strong>
+          </p>
+          <button (click)="eliminarItem(i)" class="btn-eliminar">Eliminar</button>
+        </div>
+      </div>
+
+      <img [src]="item.plato.imagenUrl" alt="{{ item.plato.nombre }}" class="carrito-imagen" />
+    </div>
+
+    <hr />
+    <div class="carrito-total">
+      <h3>Total del Carrito: <strong>{{ total | currency }}</strong></h3>
+      <button (click)="clearCart()" class="btnvaciar">Vaciar Carrito</button>
+      <button (click)="openModal()" class="btn-finalizar">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Tu carrito está vacío.</p>
+  </ng-template>
+</div>
+
+<!-- Modal para finalizar compra -->
+<div *ngIf="showModal" class="overlay">
+  <div class="modal-box">
+    <h2>Finalizar Compra</h2>
+    <form #purchaseForm="ngForm" (ngSubmit)="sendEmail()">
+      <!-- Sección de formulario de entrada -->
+      <div class="form-section">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" required [(ngModel)]="customerInfo.nombre" />
+
+        <label for="telefono">Teléfono:</label>
+        <input id="telefono" name="telefono" type="tel" required [(ngModel)]="customerInfo.telefono" />
+
+        <label for="direccion">Dirección:</label>
+        <input id="direccion" name="direccion" type="text" required [(ngModel)]="customerInfo.direccion" />
+
+        <label for="correo">Correo:</label>
+        <input id="correo" name="correo" type="email" required [(ngModel)]="customerInfo.correo" />
+
+        <label for="comprobante">Comprobante de Pago:</label>
+        <input id="comprobante" name="comprobante" type="file" (change)="handleFileInput($event)" />
+      </div>
+
+      <!-- Sección de datos de transferencia -->
+      <div class="transfer-section">
+        <h3>Datos de Transferencia</h3>
+        <div *ngFor="let banco of bancos" class="bank-info">
+          <p><strong>{{ banco.nombre }}</strong></p>
+          <img [src]="banco.qrUrl" alt="QR {{ banco.nombre }}" class="qr-code" />
+          <p>Número de cuenta: {{ banco.numeroCuenta }}</p>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="button-container">
+        <button type="submit" class="btn submit-btn">Enviar</button>
+        <button type="button" (click)="closeModal()" class="btn cancel-btn">Cancelar</button>
+      </div>
+      
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- Modal de carga y confirmación de compra -->
+<div *ngIf="showConfirmationModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>¡Listo! Muchas gracias por tu compra.</h2>
+    <p>Tu pedido está siendo validado. En breve nos comunicaremos contigo.</p>
+    
+    <div class="juego-espera">
+      <!-- Juego de baloncesto embebido desde Scratch -->
+      <iframe 
+        src="https://scratch.mit.edu/projects/868722611/embed" 
+        allowtransparency="true" 
+        width="485" height="402" 
+        frameborder="0" 
+        scrolling="no" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <button (click)="goInicio()" class="btn-volver">Volver a Inicio</button>
+  </div>
+</div>

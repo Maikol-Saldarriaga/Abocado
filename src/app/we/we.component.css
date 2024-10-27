@@ -1,0 +1,137 @@
+/* Elimina desbordamientos y asegura que la página esté centrada */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor general */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5rem 6rem;
+    gap: 1rem; /* Añade espacio entre el texto y la imagen */
+    
+
+  }
+  
+  /* Sección de texto */
+  .text-section {
+    flex: 1;
+    margin-top: -2rem;
+    padding-right: 3rem;
+    
+   
+  }
+  
+  .title {
+    font-size: 3rem; /* Reduce ligeramente el tamaño del título */
+    margin-bottom: -1rem;
+    color: #fca311;
+  }
+
+  .title2{
+    color: #fb2466;
+    font-weight: 800; 
+    font-size: 6rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .paragraph {
+    line-height: 1.6;
+    font-size: 18px; /* Ajuste de fuente para mejor lectura */
+    margin-bottom: 1.5rem;
+    color: #dddddd;
+  }
+  
+  /* Imagen */
+  .image-section img {
+    width: 600px; /* Limita el ancho máximo de la imagen */
+    height: auto;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
+   
+  }
+  
+  /* Botón */
+/* Estilo para el botón */
+.action-button {
+    background-color: transparent; /* Fondo transparente para mostrar el borde */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 100px;
+    border: 2px solid #ffffff; /* Borde blanco alrededor del botón */
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0.1rem; /* Espacio arriba del botón */
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+  }
+  
+  .action-button:hover {
+    background-color: #ffffff; /* Fondo gris claro al pasar el cursor */
+    color: #050a30;
+}
+  
+  /* Estilo responsive para móviles */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-top: 0%;
+      margin-bottom: 10%;
+    }
+  
+    .text-section {
+      padding-right: 0;
+      margin-bottom: 1.5rem;
+    }
+  
+    .title {
+      font-size: 1.8rem; /* Reduce el tamaño del título en móviles */
+    }
+  
+    .paragraph {
+      font-size: 14px; /* Reduce el tamaño del párrafo en móviles */
+      padding: 0rem 5px;
+    }
+  
+    .image-section img {
+      max-width: 100%; /* Asegura que la imagen no exceda el ancho del dispositivo */
+
+     margin-top: -1rem;
+
+    }
+
+    .action-button {
+        background-color: transparent; /* Fondo transparente para mostrar el borde */
+        color: #ffffff; /* Color del texto */
+        padding: 10px 50px;
+        border: 2px solid #ffffff; /* Borde blanco alrededor del botón */
+        border-radius: 16px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 0rem; /* Espacio arriba del botón */
+        transition: background-color 0.3s ease, color 0.3s ease;
+    
+      }
+      .title {
+        font-size: 1.6rem; /* Reduce ligeramente el tamaño del título */
+        margin-bottom: -5px;
+        color: #fca311;
+      }
+      .title2{
+        color: #fb2466;
+        font-weight: 800; 
+        font-size: 3rem;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+   
+  }
+  

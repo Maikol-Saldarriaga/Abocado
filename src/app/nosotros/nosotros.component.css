@@ -1,0 +1,20 @@
+/* Estilos para la sección de fondo */
+.background-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.815)), url('/assets/img/pared.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh; /* Ajusta para que el fondo comience debajo del menú */
+    position: relative; /* Asegura que el z-index funcione si es necesario */
+    z-index: 1; /* Menor que el del menú */
+}
+
+@media (max-width: 768px) {
+    .background-section {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.685), rgba(0, 0, 0, 0.616)), url('/assets/img/pared.jpg');
+        background-size: cover;
+        background-position: center center;
+        height: 100vh; /* Asegura que siempre ocupe al menos la altura completa de la ventana */
+        position: relative;
+        z-index: 1;
+    }
+}

@@ -1,0 +1,126 @@
+/* src/app/plato-detalle/plato-detalle.component.css */
+.modal {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.plato-nombre {
+  font-size: 1.9em;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.plato-imagen {
+  width: 100%;
+  max-height: 40vh; /* Ajusta la imagen para que no ocupe demasiado espacio */
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.plato-info {
+  width: 100%;
+  text-align: center;
+}
+
+.descripcion {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 5px;
+  padding: 60px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.precio-base {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.adiciones-titulo {
+  font-size: 1.5em;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.adiciones-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.adicion-item {
+  width: 45%;
+  font-size: 1rem;
+  color: #555;
+}
+
+.total {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-agregar {
+  width: 60%;
+  padding: 10px;
+  font-size: 1.1em;
+  color: white;
+  background-color: #fb2466;
+  border-radius: 7px ;
+  cursor: pointer;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.btn-agregar:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 768px) {
+  .modal {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  .plato-nombre {
+    font-size: 1.5em;
+  }
+  .plato-imagen {
+    max-height: 30vh;
+  }
+  .adicion-item {
+    width: 100%; /* En móviles, las adiciones ocupan el ancho completo */
+  }
+  .btn-agregar {
+    font-size: 1em;
+  }
+
+  .descripcion {
+   
+    padding: 15px;
+   
+  }
+  
+}

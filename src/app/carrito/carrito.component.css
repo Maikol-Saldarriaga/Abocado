@@ -1,0 +1,539 @@
+.carrito-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background-color: #f9f9f9;
+}
+
+.text-main{
+  padding: 20px;
+}
+
+.carrito-imagen {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: auto; /* Asegura que la imagen se empuje a la derecha */
+}
+
+.carrito-detalle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carrito-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carrito-nombre {
+  font-size: 1.4em;
+  color: #333;
+  margin: 0;
+}
+
+.carrito-precio-unitario span {
+  font-weight: bold;
+  color: #555;
+}
+
+.carrito-adiciones p {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.carrito-adiciones ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.carrito-adiciones li {
+  margin-bottom: 5px;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cantidad-control button {
+  padding: 5px 12px;
+  font-size: 1em;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cantidad-control button:hover {
+  background-color: #0056b3;
+}
+
+.carrito-total-item {
+  font-size: 1.1em;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.btn-eliminar {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #ff4d4d;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.btn-eliminar:hover {
+  background-color: #cc0000;
+}
+
+.carrito-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+.btn-vaciar {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #ff4d4d;
+  cursor: pointer;
+}
+
+.btn-vaciar:hover {
+  background-color: #cc0000;
+}
+
+.close-link {
+  padding-left: 80%; /* Espacio entre el título y el ícono */
+  color: #ff4d4d; /* Color del ícono */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 1.5em; /* Tamaño del ícono */
+  vertical-align: middle; /* Alinear verticalmente con el título */
+}
+
+.close-link:hover {
+  color: #cc0000; /* Color al pasar el ratón */
+}
+
+.close-link i {
+  margin: 0; /* Elimina márgenes alrededor del ícono */
+}
+
+/* Estilo general para el botón */
+.btn-finalizar {
+  background-color: #28a745; /* Verde intenso */
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+.btn-finalizar:hover {
+  background-color: #218838; /* Verde oscuro para hover */
+  transform: scale(1.05); /* Leve aumento en tamaño al pasar el cursor */
+}
+
+.btn-finalizar:active {
+  background-color: #1e7e34; /* Verde más oscuro en clic */
+  transform: scale(0.98); /* Leve disminución en tamaño al hacer clic */
+}
+
+.btn-finalizar:focus {
+  outline: 2px solid #155724; /* Borde para accesibilidad */
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .btn-finalizar {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    width: 90%; /* Botón ancho completo en móvil */
+  }
+
+
+  .close-link {
+    padding-left: 45%; /* Espacio entre el título y el ícono */
+    color: #ff4d4d; /* Color del ícono */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.5em; /* Tamaño del ícono */
+    padding-bottom: 3rem;
+    vertical-align: middle; /* Alinear verticalmente con el título */
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Estilo del contenedor total del carrito */
+.carrito-total {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5em;
+  width: 100%;
+  max-width: 500px; /* Limita el ancho en pantallas grandes */
+  margin: 1em auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.carrito-total h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.carrito-total h3 strong {
+  color: #28a745; /* Color verde para el total */
+}
+
+/* Estilo del botón "Vaciar Carrito" */
+.btnvaciar {
+  background-color: #f44336; /* Rojo intenso */
+  color: white;
+  font-size: 1em;
+  padding: 0.6em 1.2em;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 0.5em;
+}
+
+.btnvaciar:hover {
+  background-color: #d32f2f; /* Rojo oscuro para hover */
+  transform: scale(1.05); /* Leve aumento en tamaño */
+}
+
+.btnvaciar:active {
+  background-color: #b71c1c; /* Rojo más oscuro en clic */
+  transform: scale(0.98); /* Leve disminución en tamaño */
+}
+
+.btnvaciar:focus {
+  outline: 2px solid #b71c1c; /* Borde para accesibilidad */
+}
+
+/* Reutilización del botón de "Finalizar Compra" */
+.btn-finalizar {
+  background-color: #28a745; /* Verde intenso */
+  color: white;
+  font-size: 1em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-finalizar:hover {
+  background-color: #218838; /* Verde oscuro para hover */
+  transform: scale(1.05); /* Leve aumento en tamaño */
+}
+
+.btn-finalizar:active {
+  background-color: #1e7e34; /* Verde más oscuro en clic */
+  transform: scale(0.98); /* Leve disminución en tamaño */
+}
+
+.btn-finalizar:focus {
+  outline: 2px solid #155724; /* Borde para accesibilidad */
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+  .carrito-total {
+    padding: 1em;
+    max-width: 90%;
+  }
+
+  .carrito-total h3 {
+    font-size: 1.1em;
+  }
+
+  .btnvaciar, .btn-finalizar {
+    font-size: 0.9em;
+    padding: 0.6em 1em;
+    margin: 0.3em 0;
+    margin-right: 0.3rem;
+  margin-left: 1rem;
+    width: 100%; /* Botones a ancho completo en móvil */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS DEL PRIMER MODAL: ESTE ES EL QUE QUIERO QUE EDITES*/
+
+/* Estilos de la superposición */
+/* Estilos generales para el overlay y modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px; /* Limita el ancho en pantallas grandes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 90%;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.form-section label,
+.form-section input {
+  display: block;
+  width: 90%;
+  margin-bottom: 0.5em;
+}
+
+.form-section input {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.transfer-section h3 {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+
+.bank-info {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.qr-code {
+  width: 100px;
+  height: 100px;
+  margin: 0.5em 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.btn {
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+  .modal-box {
+    padding: 15px;
+    width: 85%;
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .qr-code {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+/*CSS DEL SEGUNDO MODAL: ESTE QUIERO QUE QUEDE TAL CUAL*/
+
+
+/* Estilos generales para el overlay del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Estilos del contenedor del modal */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px; /* Tamaño máximo para pantallas grandes */
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para el título y mensaje */
+.modal-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Estilos del botón de volver a inicio */
+.btn-volver {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-volver:hover {
+  background: #45a049;
+}
+
+/* Estilos del contenedor del juego */
+.juego-espera iframe {
+  width: 100%;
+  height: 300px; /* Altura adaptada para pantallas grandes */
+  border-radius: 8px;
+}
+
+/* Responsivo para pantallas grandes */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 70%;
+  }
+
+  .juego-espera iframe {
+    height: 400px; /* Mayor altura para pantallas grandes */
+  }
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 767px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .juego-espera iframe {
+    height: 250px; /* Altura ajustada para móviles */
+  }
+
+  .btn-volver {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
