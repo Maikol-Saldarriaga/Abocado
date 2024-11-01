@@ -24,6 +24,11 @@
             </ul>
           </div>
 
+          <!-- Mostrar Petición Adicional si existe -->
+          <div *ngIf="item.peticionAdicional">
+            <p><strong>Petición Adicional:</strong> {{ item.peticionAdicional }}</p>
+          </div>
+
           <div class="cantidad-control">
             <button (click)="decrementarCantidad(i)">-</button>
             <span>{{ item.cantidad }}</span>
@@ -95,9 +100,6 @@
     </form>
   </div>
 </div>
-
-
-
 
 <!-- Modal de carga y confirmación de compra -->
 <div *ngIf="showConfirmationModal" class="modal-overlay">

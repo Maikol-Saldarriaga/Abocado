@@ -10,12 +10,22 @@ export class ContactComponent {
   name: string = '';
   email: string = '';
   message: string = '';
+  satisfaction = {
+    foodQuality: '',
+    staffService: '',
+    restaurantAmbience: '',
+    recommendation: ''
+  };
 
   sendEmail() {
     const templateParams = {
-      from_name: this.name,       // Variable para el nombre del remitente
-      reply_to: this.email,       // Variable para el correo del remitente
-      message: this.message       // Variable para el mensaje del remitente
+      from_name: this.name,
+      reply_to: this.email,
+      message: this.message,
+      foodQuality: this.satisfaction.foodQuality,
+      staffService: this.satisfaction.staffService,
+      restaurantAmbience: this.satisfaction.restaurantAmbience,
+      recommendation: this.satisfaction.recommendation
     };
 
     emailjs.send('service_0g4imso', 'template_94fg6aw', templateParams, 'FYeyTdRh4ZZ01aJLY')
@@ -25,11 +35,15 @@ export class ContactComponent {
           this.name = '';
           this.email = '';
           this.message = '';
+          this.satisfaction = {
+            foodQuality: '',
+            staffService: '',
+            restaurantAmbience: '',
+            recommendation: ''
+          };
       }, (error) => {
           console.log('Error al enviar el correo.', error);
           alert('Error al enviar el correo. Inténtalo de nuevo.');
       });
   }
 }
-
-      

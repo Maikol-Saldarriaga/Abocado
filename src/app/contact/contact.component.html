@@ -1,74 +1,96 @@
 <div id="section-contacto" class="main">
-    <section class="contact" id="contact">
-      <div class="title1">
-        <h1 class="text-center">Contáctanos</h1>
-      </div>
-      <div class="title2">
-        <h5 class="text-center2">
-          En Abocados lo más importante son nuestros clientes por eso escribenos y comenta tus experiencias
-        </h5>
-      </div>
-      <div class="form-container">
-        <!-- Columna izquierda: Formulario -->
-        <div class="left-column">
-          <div class="mb-3">
-            <div class="container text-center">
-              <div class="row form-row">
-                <div class="col-12 col-md-6">
-                  <input
-                    type="text"
-                    class="form-control first"
-                    id="nameInput"
-                    placeholder="Nombre"
-                    [(ngModel)]="name"
-                    required
-                  />
-                </div>
-                <div class="col-12 col-md-6">
-                  <input
-                    type="email"
-                    class="form-control first"
-                    id="emailInput"
-                    placeholder="Email"
-                    [(ngModel)]="email"
-                    required
-                  />
-                </div>
+  <section class="contact" id="contact">
+    <div class="title1">
+      <h1 class="text-center">Contáctanos</h1>
+    </div>
+    <div class="title2">
+      <h5 class="text-center2">
+        En Abocados lo más importante son nuestros clientes, por eso, ¡cuéntanos qué opinas!
+      </h5>
+    </div>
+    <div class="form-container">
+      <!-- Columna izquierda: Formulario -->
+      <div class="left-column">
+        <div class="mb-3">
+          <div class="container text-center">
+            <!-- Preguntas de satisfacción -->
+            <div class="row">
+              <div class="col-12">
+                <p>¿Qué tan satisfecho te sentiste con la calidad de la comida?</p>
+                <select class="form-control first" [(ngModel)]="satisfaction.foodQuality">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Muy satisfecho">Muy satisfecho</option>
+                  <option value="Satisfecho">Satisfecho</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Insatisfecho">Insatisfecho</option>
+                  <option value="Muy insatisfecho">Muy insatisfecho</option>
+                </select>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <textarea
-                    class="form-control second"
-                    id="messageTextarea"
-                    placeholder="Mensaje"
-                    [(ngModel)]="message"
-                    required
-                  ></textarea>
-                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <p>¿Qué tan satisfecho te sentiste con la atención del personal?</p>
+                <select class="form-control first" [(ngModel)]="satisfaction.staffService">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Muy satisfecho">Muy satisfecho</option>
+                  <option value="Satisfecho">Satisfecho</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Insatisfecho">Insatisfecho</option>
+                  <option value="Muy insatisfecho">Muy insatisfecho</option>
+                </select>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <button type="button" class="btn" (click)="sendEmail()">
-                    Enviar
-                  </button>
-                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <p>¿Qué tan satisfecho estás con el ambiente del restaurante?</p>
+                <select class="form-control first" [(ngModel)]="satisfaction.restaurantAmbience">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Muy satisfecho">Muy satisfecho</option>
+                  <option value="Satisfecho">Satisfecho</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Insatisfecho">Insatisfecho</option>
+                  <option value="Muy insatisfecho">Muy insatisfecho</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <p>¿Recomendarías nuestro restaurante a amigos o familiares?</p>
+                <select class="form-control first" [(ngModel)]="satisfaction.recommendation">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Definitivamente sí">Definitivamente sí</option>
+                  <option value="Probablemente sí">Probablemente sí</option>
+                  <option value="No estoy seguro">No estoy seguro</option>
+                  <option value="Probablemente no">Probablemente no</option>
+                  <option value="Definitivamente no">Definitivamente no</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="row">
+              <div class="col-12">
+                <button type="button" class="btn" (click)="sendEmail()">Enviar</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
   
-        <!-- Columna derecha: Información adicional -->
-        <div class="right-column">
-          <div class="info-box">
-            <h3>Preguntas</h3>
-            <p>¿Tienes alguna pregunta? Completa este formulario y nos aseguraremos de brindarte una respuesta clara y rápida.</p>
-            <h3>Interrupciones</h3>
-            <p>Si experimentaste alguna interrupción en la información, por favor, indícalo en el formulario. Estamos aquí para resolver cualquier inconveniente.</p>
-            <h3>Más Información</h3>
-            <p>¿Necesitas más información? Rellena el formulario y te proporcionaremos todos los detalles que necesitas lo antes posible.</p>
-          </div>
+      <!-- Columna derecha: Información adicional -->
+      <div class="right-column">
+        <div class="info-box">
+          <h3>Preguntas</h3>
+          <p>¿Tienes alguna pregunta? Completa este formulario y nos aseguraremos de brindarte una respuesta clara y rápida.</p>
+          <h3>Interrupciones</h3>
+          <p>Si experimentaste alguna interrupción en la información, por favor, indícalo en el formulario. Estamos aquí para resolver cualquier inconveniente.</p>
+          <h3>Más Información</h3>
+          <p>¿Necesitas más información? Rellena el formulario y te proporcionaremos todos los detalles que necesitas lo antes posible.</p>
         </div>
       </div>
-    </section>
-  </div>
-  
+    </div>
+  </section>
+</div>

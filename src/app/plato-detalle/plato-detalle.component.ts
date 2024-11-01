@@ -11,6 +11,7 @@ import { CartService } from '../cart.service';
 export class PlatoDetalleComponent {
   adiciones: { nombre: string; precio: number; seleccionada?: boolean }[] = [];
   total: number;
+  peticionAdicional: string = ''; // Nueva propiedad
 
   constructor(
     public dialogRef: MatDialogRef<PlatoDetalleComponent>,
@@ -31,24 +32,21 @@ export class PlatoDetalleComponent {
         { nombre: 'Adic mozzarela x 140 grs', precio: 6000.0, seleccionada: false },
         { nombre: 'Adic mozzarela x 70 grs', precio: 3000.0, seleccionada: false },
         { nombre: 'Adic philadelphia', precio: 7000.0, seleccionada: false },
-
       ];
     } else if (tipoMenu === 'papas') {
       this.adiciones = [
         { nombre: 'Solo pollo', precio: 0.00, seleccionada: false },
         { nombre: 'Solo Carne', precio: 0.00, seleccionada: false },
       ];
-    }else if (tipoMenu === 'perros') {
+    } else if (tipoMenu === 'perros') {
       this.adiciones = [
         { nombre: 'Sin cebolla', precio: 0.0, seleccionada: false },
         { nombre: 'Adic mozzarela x 140 grs', precio: 6000.0, seleccionada: false },
         { nombre: 'Adic mozzarela x 70 grs', precio: 3000.0, seleccionada: false },
         { nombre: 'Adic philadelphia', precio: 7000.0, seleccionada: false },
       ];
-    }else if (tipoMenu === 'bebidas') {
-      this.adiciones = [
-        
-      ];
+    } else if (tipoMenu === 'bebidas') {
+      this.adiciones = [];
     }
   }
 
@@ -62,9 +60,9 @@ export class PlatoDetalleComponent {
     this.cartService.addToCart({
       plato: this.data.plato,
       adiciones: adicionesSeleccionadas,
-      total: this.total // Total ya incluye las adiciones seleccionadas
+      total: this.total,
+      peticionAdicional: this.peticionAdicional // Envía la petición adicional
     });
     this.dialogRef.close();
   }
-  
 }

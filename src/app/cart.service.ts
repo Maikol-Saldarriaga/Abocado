@@ -1,14 +1,14 @@
-// src/app/services/cart.service.ts
+// src/app/components/cart.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   private items: any[] = [];
 
   addToCart(item: any) {
-    this.items.push(item);
+    this.items.push(item); // Almacena la petición adicional junto con el pedido
   }
 
   getItems() {

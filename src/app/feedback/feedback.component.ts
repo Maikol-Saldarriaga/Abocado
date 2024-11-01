@@ -15,8 +15,8 @@ interface Employee {
 export class FeedbackComponent implements OnInit {
   employees: Employee[] = [
     { name: 'Juan Pérez', imageUrl: 'assets/img/empleado1.jpg', rating: this.getRandomRating() },
-    { name: 'María García', imageUrl: 'assets/img/empleado2.jpg', rating: this.getRandomRating() },
-    { name: 'Carlos Sánchez', imageUrl: 'assets/img/empleado3.jpg', rating: this.getRandomRating() },
+    { name: 'Carlos Sánchez', imageUrl: 'assets/img/empleado2.jpg', rating: this.getRandomRating() },
+    { name: 'Oriana Ramos', imageUrl: 'assets/img/empleado3.jpg', rating: this.getRandomRating() },
     { name: 'Ana Ramírez', imageUrl: 'assets/img/empleado4.jpg', rating: this.getRandomRating() }
   ];
 

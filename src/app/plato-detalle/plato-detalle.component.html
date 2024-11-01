@@ -16,6 +16,10 @@
         {{ adicion.nombre }} (+${{ adicion.precio }})
       </label>
     </div>
+
+    <label for="peticionAdicional">Petición Adicional:</label>
+    <textarea id="peticionAdicional" name="peticionAdicional" [(ngModel)]="peticionAdicional" placeholder="Escribe alguna petición adicional..."></textarea>
+    
   </div>
 
   <p class="total"><strong>Total: ${{ total }}</strong></p>
